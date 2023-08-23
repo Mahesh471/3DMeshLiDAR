@@ -1,24 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MhM-cI-oou">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="4zs-gT-kRa">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="MhM-cI-oou" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K4e-dj-9n7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HnA-Li-QYJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDZ-a4-JQw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-608" y="4"/>
+        </scene>
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="_DMeshLiDAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="t0U-4y-Wkm">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbn-9s-BGh">
+                                <rect key="frame" x="167" y="749" width="59" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Tbn-9s-BGh" secondAttribute="height" id="y9U-4z-ptU"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="scan"/>
+                                <connections>
+                                    <action selector="scanButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jub-xc-rBP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3D Scanner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGz-Qu-URF">
+                                <rect key="frame" x="131.33333333333337" y="79" width="130.66666666666663" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SVs-Y2-4wR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tbn-9s-BGh" secondAttribute="bottom" constant="10" id="9bw-8W-xTb"/>
+                            <constraint firstItem="t0U-4y-Wkm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EUt-2Q-sps"/>
+                            <constraint firstItem="Tbn-9s-BGh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.15" id="Ffd-Df-oiQ"/>
+                            <constraint firstItem="zGz-Qu-URF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ueh-jx-2c9"/>
+                            <constraint firstAttribute="trailing" secondItem="t0U-4y-Wkm" secondAttribute="trailing" id="W8m-Vd-Wsb"/>
+                            <constraint firstAttribute="bottom" secondItem="t0U-4y-Wkm" secondAttribute="bottom" id="Zu9-QC-PBe"/>
+                            <constraint firstItem="t0U-4y-Wkm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bQX-pL-iup"/>
+                            <constraint firstItem="Tbn-9s-BGh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wTG-3u-z6e"/>
+                            <constraint firstItem="zGz-Qu-URF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="xnE-Hz-1oG"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="01v-Fk-Z8g"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="zGz-Qu-URF" id="eqo-ci-uZi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="4"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="CDm-4t-Rhg">
+            <objects>
+                <viewController storyboardIdentifier="ScanViewController" id="dMh-b2-lN3" customClass="ScanViewController" customModule="_DMeshLiDAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VN1-pB-EM6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F8-1Z-Rb1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </arView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-Sd-a6k">
+                                <rect key="frame" x="292" y="59" width="85" height="40"/>
+                                <color key="backgroundColor" white="0.19864856953523596" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="T73-gH-AwI"/>
+                                    <constraint firstAttribute="width" constant="85" id="daB-kR-t4O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Rescan"/>
+                                <connections>
+                                    <action selector="rescanButtonAction:" destination="dMh-b2-lN3" eventType="touchUpInside" id="hDK-qX-7OE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdQ-yy-RsF">
+                                <rect key="frame" x="126.66666666666669" y="768" width="140" height="40"/>
+                                <color key="backgroundColor" white="0.1021497038756909" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="W91-eS-iDg"/>
+                                    <constraint firstAttribute="height" constant="40" id="dir-cg-ErB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Stop &amp; Export"/>
+                                <connections>
+                                    <action selector="stopAndExportButtonAction:" destination="dMh-b2-lN3" eventType="touchUpInside" id="kTs-0g-Pbr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the below button to Export 3D mesh object (.obj file)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqQ-DO-Xia">
+                                <rect key="frame" x="46.666666666666657" y="693" width="300" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.20098988109866514" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Vl7-18-2aL"/>
+                                    <constraint firstAttribute="width" constant="300" id="WYf-5z-WzN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="0.80116868176997103" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYn-rn-gnf">
+                                <rect key="frame" x="16" y="63" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="75h-bh-dPW"/>
+                                    <constraint firstAttribute="width" secondItem="MYn-rn-gnf" secondAttribute="height" id="k02-He-EDh"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="dMh-b2-lN3" eventType="touchUpInside" id="gBC-TH-Hb6"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scanning..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmR-ZL-AsA">
+                                <rect key="frame" x="145.33333333333334" y="94" width="102.66666666666666" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="ge0-ct-cUA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H9q-s3-uMg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UdQ-yy-RsF" firstAttribute="centerX" secondItem="VN1-pB-EM6" secondAttribute="centerX" id="05N-oK-aQY"/>
+                            <constraint firstItem="XqQ-DO-Xia" firstAttribute="centerX" secondItem="VN1-pB-EM6" secondAttribute="centerX" id="9w1-A5-YuO"/>
+                            <constraint firstItem="4F8-1Z-Rb1" firstAttribute="leading" secondItem="VN1-pB-EM6" secondAttribute="leading" id="AKH-T5-sgj"/>
+                            <constraint firstItem="MYn-rn-gnf" firstAttribute="leading" secondItem="H9q-s3-uMg" secondAttribute="leading" constant="16" id="AmX-Xq-9J1"/>
+                            <constraint firstItem="UdQ-yy-RsF" firstAttribute="top" secondItem="XqQ-DO-Xia" secondAttribute="bottom" constant="20" id="C6t-gd-kMQ"/>
+                            <constraint firstItem="4F8-1Z-Rb1" firstAttribute="top" secondItem="VN1-pB-EM6" secondAttribute="top" id="Ddt-dc-z1e"/>
+                            <constraint firstItem="Q9Q-Sd-a6k" firstAttribute="top" secondItem="VN1-pB-EM6" secondAttribute="topMargin" id="Pxi-g0-jSV"/>
+                            <constraint firstItem="vmR-ZL-AsA" firstAttribute="top" secondItem="H9q-s3-uMg" secondAttribute="top" constant="35" id="U2K-nI-Fdu"/>
+                            <constraint firstAttribute="trailing" secondItem="4F8-1Z-Rb1" secondAttribute="trailing" id="WoS-qb-B43"/>
+                            <constraint firstItem="H9q-s3-uMg" firstAttribute="trailing" secondItem="Q9Q-Sd-a6k" secondAttribute="trailing" constant="16" id="YaH-56-t1b"/>
+                            <constraint firstItem="H9q-s3-uMg" firstAttribute="bottom" secondItem="UdQ-yy-RsF" secondAttribute="bottom" constant="10" id="cYF-og-RJy"/>
+                            <constraint firstItem="vmR-ZL-AsA" firstAttribute="centerX" secondItem="VN1-pB-EM6" secondAttribute="centerX" id="oDj-lg-LeX"/>
+                            <constraint firstItem="MYn-rn-gnf" firstAttribute="top" secondItem="VN1-pB-EM6" secondAttribute="topMargin" constant="4" id="ogf-94-yGk"/>
+                            <constraint firstAttribute="bottom" secondItem="4F8-1Z-Rb1" secondAttribute="bottom" id="yZ9-AG-mvY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="4F8-1Z-Rb1" id="oNd-WA-c7g"/>
+                        <outlet property="descLabel" destination="XqQ-DO-Xia" id="7je-ee-Zg9"/>
+                        <outlet property="rescanButton" destination="Q9Q-Sd-a6k" id="lKQ-UD-MJp"/>
+                        <outlet property="scanStatusLabel" destination="vmR-ZL-AsA" id="mMR-UD-Okb"/>
+                        <outlet property="stopAndExportButton" destination="UdQ-yy-RsF" id="Zfg-93-HgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbf-UU-ffL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809.92366412213732" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="512" height="512"/>
+        <image name="scan" width="128" height="128"/>
+        <image name="splash" width="704" height="1525"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
