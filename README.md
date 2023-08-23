@@ -1,9 +1,22 @@
 # 3DMeshLiDAR
 A simple project that Scan object and create a 3D mesh file using iPhone
 
-Supported Device: iPhone, iPad
+**Supported Device:**
 
-Supported Orientation: Portrait Only (upside down)
+iPhone 12 Pro & 12 Pro Max
+
+iPhone 13 Pro & 13 Pro Max
+
+iPhone 14 Pro & 14 Pro Max
+
+11 Inch iPad Pro (2020, 2021, 2022)
+
+12.9 Inch iPad Pro (2020, 2021, 2022)
+
+                  
+**Supported Orientation:**
+
+Portrait Only (upside down)
 
 # Requirement
 XCode: 14.3
