@@ -31,3 +31,10 @@ iOS: 15.4 and above
 https://github.com/Mahesh471/3DMeshLiDAR.git
 3. Open the project files in Xcode.
 4. Run the active scheme.
+
+# Future Enhancement
+In this POC, We can scan objects placed in front of the device including background scenes and can export to a 3D mesh file (.obj) for further processing.
+
+In iOS 17.0+ Apple provided an enhanced API for Object Capture, in which we can turn the object into ready-to-use 3D models.
+
+Note: Currently iOS 17.0+ is in Beta, will be available publically by September 21, 2023.
